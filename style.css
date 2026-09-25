@@ -1,0 +1,246 @@
+/* =========================================================
+   VARIABLES DE COULEUR ET DE TYPOGRAPHIE
+   On centralise les valeurs ici pour pouvoir tout changer
+   facilement depuis un seul endroit.
+   ========================================================= */
+:root {
+  --couleur-fond: #F7F5F1;       /* fond général, blanc cassé */
+  --couleur-texte: #1B2430;      /* texte principal, bleu nuit */
+  --couleur-texte-doux: #4A5563; /* texte secondaire, gris-bleu */
+  --couleur-accent: #B9832F;     /* accent doré, utilisé avec parcimonie */
+  --couleur-bordure: #DAD5CB;    /* lignes de séparation discrètes */
+
+  --largeur-max: 780px;          /* largeur de lecture confortable */
+  --espacement: 1.5rem;
+}
+
+/* =========================================================
+   RÉINITIALISATION MINIMALE
+   Évite les incohérences d'affichage entre navigateurs.
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Style de lien commun : sobre, souligné, sans effet clignotant */
+a {
+  color: var(--couleur-texte);
+}
+
+/* Style visible du focus clavier : indispensable pour l'accessibilité */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--couleur-accent);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   EN-TÊTE
+   ========================================================= */
+.site-header {
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 2rem var(--espacement) 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 700;
+  margin: 0;
+}
+
+.site-header nav a {
+  margin-left: 1.25rem;
+  text-decoration: none;
+  color: var(--couleur-texte-doux);
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  color: var(--couleur-texte);
+}
+
+/* =========================================================
+   MISE EN PAGE GÉNÉRALE DES SECTIONS
+   ========================================================= */
+.section {
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 3rem var(--espacement);
+  border-top: 1px solid var(--couleur-bordure);
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================================
+   SECTION PROFIL (présentation + photo)
+   ========================================================= */
+.profil {
+  border-top: none;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column-reverse; /* sur mobile : texte au-dessus, photo en dessous */
+  gap: 2rem;
+  align-items: center;
+}
+
+.intro-label {
+  color: var(--couleur-accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.profil h1 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+}
+
+.intro-description {
+  color: var(--couleur-texte-doux);
+  max-width: 60ch; /* limite la longueur de ligne pour la lisibilité */
+}
+
+.profil-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%; /* photo en rond, traitement discret et classique */
+  object-fit: cover;
+}
+
+/* À partir d'un écran plus large : photo et texte côte à côte */
+@media (min-width: 640px) {
+  .profil {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .profil-photo {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================================
+   SECTION COMPÉTENCES
+   ========================================================= */
+.liste-competences {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;      /* une colonne sur mobile */
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .liste-competences {
+    grid-template-columns: 1fr 1fr; /* deux colonnes sur écran large */
+  }
+}
+
+.liste-competences h3 {
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--couleur-accent); /* repère visuel sobre, sans carte ni ombre */
+}
+
+.liste-competences p {
+  margin: 0;
+  padding-left: 0.8rem;
+  color: var(--couleur-texte-doux);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   SECTION PROJETS
+   ========================================================= */
+.liste-projets {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.projet h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.projet p {
+  margin: 0 0 0.6rem;
+  color: var(--couleur-texte-doux);
+}
+
+.lien-projet {
+  text-decoration: none;
+  border-bottom: 1px solid var(--couleur-accent);
+  padding-bottom: 1px;
+}
+
+/* =========================================================
+   SECTION CONTACT
+   ========================================================= */
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: var(--couleur-texte-doux);
+}
+
+.bouton-contact {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--couleur-texte);
+  color: var(--couleur-fond);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.bouton-contact:hover,
+.bouton-contact:focus-visible {
+  background-color: var(--couleur-accent);
+}
+
+/* =========================================================
+   PIED DE PAGE
+   ========================================================= */
+.site-footer {
+  text-align: center;
+  padding: 2rem var(--espacement);
+  color: var(--couleur-texte-doux);
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   ACCESSIBILITÉ : respecte les utilisateurs qui limitent les animations
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}

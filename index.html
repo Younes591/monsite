@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Rend le site lisible sur mobile (obligatoire pour un site responsive) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Camille Moreau</title>
+  <meta name="description" content="Portfolio de Camille Moreau, étudiante en école de commerce.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== EN-TÊTE : nom + navigation rapide ===== -->
+  <header class="site-header">
+    <p class="logo">Camille Moreau</p>
+    <nav aria-label="Navigation principale">
+      <a href="#profil">Profil</a>
+      <a href="#competences">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== SECTION 1 : présentation courte + photo ===== -->
+    <section id="profil" class="section profil">
+      <div class="profil-texte">
+        <p class="intro-label">École de commerce · Master 1 Finance</p>
+        <h1>Étudiante en école de commerce, curieuse de finance et de stratégie d'entreprise.</h1>
+        <p class="intro-description">
+          Actuellement en Master 1 à l'ESC Lyon, je m'intéresse à l'analyse financière
+          et à la gestion de projet. J'aime transformer des données complexes en
+          décisions claires. À la recherche d'un stage de 6 mois à partir de janvier.
+        </p>
+      </div>
+      <!-- L'attribut alt est essentiel pour l'accessibilité (lecteurs d'écran) -->
+      <img
+        class="profil-photo"
+        src="photo.png"
+        alt="Photo de profil de Camille Moreau"
+        width="387"
+        height="516"
+      >
+    </section>
+
+    <!-- ===== SECTION 2 : quatre compétences ===== -->
+    <section id="competences" class="section">
+      <h2>Compétences</h2>
+      <!-- Une liste <ul> est plus accessible qu'une suite de <div> pour ce type de contenu -->
+      <ul class="liste-competences">
+        <li>
+          <h3>Analyse financière</h3>
+          <p>Construction de modèles, lecture de bilans et de comptes de résultat.</p>
+        </li>
+        <li>
+          <h3>Excel avancé</h3>
+          <p>Tableaux croisés dynamiques, formules imbriquées, mise en forme de tableaux de bord.</p>
+        </li>
+        <li>
+          <h3>Gestion de projet</h3>
+          <p>Planification, coordination d'équipe et suivi d'objectifs sur plusieurs projets étudiants.</p>
+        </li>
+        <li>
+          <h3>Anglais professionnel</h3>
+          <p>TOEIC 950. À l'aise à l'oral comme à l'écrit dans un contexte business.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== SECTION 3 : deux projets ===== -->
+    <section id="projets" class="section">
+      <h2>Projets</h2>
+      <div class="liste-projets">
+
+        <article class="projet">
+          <h3>Étude de marché — Mobilité douce</h3>
+          <p>
+            Analyse du marché du vélo électrique en France pour un projet de fin
+            d'année : étude de la concurrence, du positionnement prix et recommandations
+            stratégiques présentées devant un jury.
+          </p>
+          <a href="#" class="lien-projet">Voir le rapport →</a>
+        </article>
+
+        <article class="projet">
+          <h3>Business plan — Association étudiante</h3>
+          <p>
+            Élaboration du plan de financement et du prévisionnel sur 3 ans pour une
+            association étudiante, incluant la recherche de partenaires et le suivi
+            budgétaire.
+          </p>
+          <a href="#" class="lien-projet">Voir le document →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4 : contact ===== -->
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p>Disponible pour un échange ou un entretien.</p>
+      <a class="bouton-contact" href="mailto:camille.moreau@example.com">
+        camille.moreau@example.com
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="annee-courante"></span> Camille Moreau</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
